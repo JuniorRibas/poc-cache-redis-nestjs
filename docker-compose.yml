@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  redis-compose:
+    image: redis
+    command: redis-server --requirepass 1234 --appendonly yes
+    hostname: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - /redisvolume:/var/lib/postgresql/data
